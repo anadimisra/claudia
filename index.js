@@ -1,10 +1,11 @@
+'use strict';
+
 var ApiBuilder = require('claudia-api-builder'),
 api = new ApiBuilder();
 
 module.exports = api;
 
-api.get('/', function () {
-  'use strict';
-  return 'Hello World';
+api.get('/animals/{name}', function (request) {
+  return 'Hello ' + request.pathParams.name;
 });
 
