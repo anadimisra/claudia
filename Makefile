@@ -16,3 +16,6 @@ publish:
 
 run:
 	curl $$(printf "https://%s.execute-api.%s.amazonaws.com/latest" $$(cat claudia.json | jq '.api.id' | xargs) $$(cat claudia.json | jq '.lambda.region' | xargs))
+
+url:
+	printf "URL:\nhttps://%s.execute-api.%s.amazonaws.com/latest\n" $$(cat claudia.json | jq '.api.id' | xargs) $$(cat claudia.json | jq '.lambda.region' | xargs)
