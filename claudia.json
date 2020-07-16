@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "lambda-api-executor",
+    "name": "lambda-api",
+    "region": "me-south-1"
+  },
+  "api": {
+    "id": "uu62urg3v6",
+    "module": "index"
+  }
+}

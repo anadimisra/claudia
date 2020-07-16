@@ -9,3 +9,10 @@ stop:
 
 exec:
 	docker exec -it claudia bash
+
+
+publish:
+	claudia create --region me-south-1 --name lambda-api --api-module index
+
+run:
+	curl $$(printf "https://%s.execute-api.%s.amazonaws.com/latest" $$(cat claudia.json | jq '.api.id' | xargs) $$(cat claudia.json | jq '.lambda.region' | xargs))
